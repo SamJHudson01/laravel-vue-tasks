@@ -1,8 +1,11 @@
 <?php
+
+declare(strict_types=1);
+
 namespace App\Http\Middleware;
 
-use Inertia\Middleware;
 use Illuminate\Support\Facades\Log;
+use Inertia\Middleware;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -13,4 +16,3 @@ class HandleInertiaRequests extends Middleware
         Log::info('Inertia root view:', ['rootView' => $this->rootView]);
     }
 }
-
