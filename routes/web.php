@@ -1,7 +1,16 @@
 <?php
+use Inertia\Inertia;
 
-use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return Inertia::render('Welcome', [
+        'message' => 'Hello from Inertia!',
+    ]);
 });
+
+Route::get('/test-layout', function () {
+    return view('layouts.app', ['page' => []]); // Explicitly resolve the layout
+});
+
+
+
